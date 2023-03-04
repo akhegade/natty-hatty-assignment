@@ -7,7 +7,7 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 
 import Avatar from "@mui/material/Avatar";
-import Typography from "@mui/material/Typography";
+
 function Activity(props) {
   return (
     <Timeline
@@ -22,25 +22,22 @@ function Activity(props) {
         ? props?.data?.map((el) => (
             <TimelineItem>
               <TimelineSeparator>
-                <TimelineDot>
+                <TimelineDot className="bg-[#DEE8FF]">
                   <Avatar
                     alt="Profile Pic"
                     src={el.timeLineDotContent}
-                    className="w-4 h-4"
+                    className="w-4 h-4 "
                   />
                 </TimelineDot>
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
-                <Typography
-                  className="
-                font-sans text-sm"
-                >
-                  {el.title}
-                </Typography>
-                <Typography className="font-sans text-sm">
-                  {el.subTitle}
-                </Typography>
+                <p className="font-sans font-semibold leading-none text-xs">
+                  {el.note} <span className="text-[#F8991F]">{el.action}</span>
+                </p>
+                <span className="font-sans tracking-normal text-xs text-[#C7C7C7] leading-none">
+                  {el.date}
+                </span>
               </TimelineContent>
             </TimelineItem>
           ))
