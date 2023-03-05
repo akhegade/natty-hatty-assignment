@@ -8,7 +8,8 @@ function App() {
     <Grid
       container
       // spacing={2}
-      className=" bg-white h-full  "
+      sm={12}
+      className=" bg-white h-full "
       // style={{ width: "auto" }}
     >
       <NavBar />

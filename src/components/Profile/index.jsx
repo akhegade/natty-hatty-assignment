@@ -12,7 +12,7 @@ function Profile(props) {
   }));
 
   return (
-    <Box className="w-52 flex justify-center items-center  border-r-2 border-dashed">
+    <Box className="w-52 flex justify-center items-center  border-r-2 border-dashed max-sm:border-0">
       <Badge
         overlap="circular"
         anchorOrigin={{ vertical: "bottom", horizontal: "right" }}

@@ -128,19 +128,23 @@ function HomePage(props) {
   const [isSent, setSent] = useState(true);
 
   return (
-    <Grid container className="m-8">
+    <Grid container className="mx-12 mt-24">
       <Grid
         container
         item
-        sm={12}
+        // sm={12}
+        sx={{
+          display: { xs: "none", md: "flex" },
+        }}
         justifyContent="space-between"
         alignContent={"center"}
         className="mb-5 "
+        flexWrap={"wrap"}
       >
         <Box className="workSans font-bold text-2xl leading-none">
           My Account
         </Box>
-        <Box className="bg-[#CEF2DA]  text-[#0C611A] text-center px-4 py-3 rounded w-1/4 font-sans font-bold text-xl leading-none">
+        <Box className="bg-[#CEF2DA]  text-[#0C611A] text-center px-4 py-2 rounded w-max font-sans  text-xs leading-none">
           Success Message Here
         </Box>
         <Box>
@@ -152,9 +156,14 @@ function HomePage(props) {
           </Button>
         </Box>
       </Grid>
-      <Grid container item sm={8} className=" bg-white ">
-        <Grid container sm={12} className="bg-[#F5F6F8]  m-2 p-2 rounded-md ">
-          <Grid container sm={3} className="">
+      <Grid container item xs={12} md={8} className=" bg-white ">
+        <Grid
+          container
+          item
+          md={12}
+          className="bg-[#F5F6F8]  m-2 p-2 rounded-md "
+        >
+          <Grid container item md={3} className="">
             <Profile />
           </Grid>
           <Grid container item sm={7} className="w-full">
@@ -208,28 +217,33 @@ function HomePage(props) {
           <Grid
             container
             item
-            md={2}
-            justifyContent="flex-end"
-            alignItems="flex-end"
+            sm={2}
+            // xs={12}
+            // justifyContent="flex-end"
+            // xs={{ display: { sx: "flex" }, justifyContent: "flex-start" }}
+            // alignItems="flex-end"
+            className="w-full"
           >
-            <Button
-              variant="contained"
-              className="bg-[#0C611A] w-36 h-8 shadow-none border-0 font-sans font-normal capitalize tracking-normal text-xs"
-            >
-              Save Changes
-            </Button>
-            <Button
-              variant="contained"
-              className="bg-[#232E3E] w-36 h-8 shadow-none font-sans font-normal tracking-normal capitalize text-xs leading-none"
-            >
-              Change Password
-            </Button>
-            <Button
-              variant="contained"
-              className="bg-[#FF3A3A] w-36 h-8 shadow-none font-sans font-normal tracking-normal capitalize text-xs"
-            >
-              Leave Family
-            </Button>
+            <Box className="flex flex-col max-sm:flex-row	w-fit ">
+              <Button
+                variant="contained"
+                className="bg-[#0C611A] w-full h-8 m-2 max-sm:mr-1 shadow-none border-0 font-sans font-normal capitalize tracking-normal text-xs"
+              >
+                Save Changes
+              </Button>
+              <Button
+                variant="contained"
+                className="bg-[#232E3E] w-full h-8 m-2 max-sm:mr-1 shadow-none font-sans font-normal tracking-normal capitalize text-xs leading-none"
+              >
+                Change Password
+              </Button>
+              <Button
+                variant="contained"
+                className="bg-[#FF3A3A] w-full h-8 m-2 max-sm:mr-1 shadow-none font-sans font-normal tracking-normal capitalize text-xs"
+              >
+                Leave Family
+              </Button>
+            </Box>
           </Grid>
         </Grid>
         <Grid container sm={12} className="">
@@ -305,7 +319,7 @@ function HomePage(props) {
                 <Box
                   className={`flex justify-between m-1 ${
                     el.isActive ? "bg-[#F8991F]" : "bg-[#DEE8FF]"
-                  } border-2 rounded-sm p-2`}
+                  } border-2 rounded-md p-2`}
                 >
                   <Box className="flex items-center w-56">
                     <Avatar alt="Profile Pic" src={el.image} className="mr-2" />
@@ -361,7 +375,7 @@ function HomePage(props) {
                 <Button
                   variant="contained"
                   className={`${
-                    isSent ? "bg-[#F8991F]" : "bg-[#DBDBDB]"
+                    isSent ? "bg-[#F8991F] " : "bg-[#DBDBDB] text-[#232E3E] "
                   } w-26 h-7 shadow-none font-sans font-normal capitalize tracking-normal text-xs leading-none m-0 border-2 rounded-full rounded-r-none`}
                   onClick={() => setSent(!isSent)}
                 >
@@ -370,7 +384,7 @@ function HomePage(props) {
                 <Button
                   variant="contained"
                   className={`${
-                    !isSent ? "bg-[#F8991F]" : "bg-[#DBDBDB]"
+                    !isSent ? "bg-[#F8991F]" : "bg-[#DBDBDB] text-[#232E3E]"
                   } w-26 h-7 shadow-none font-sans font-normal  capitalize tracking-normal text-xs leading-none m-0 border-2 rounded-full rounded-l-none`}
                   onClick={() => setSent(!isSent)}
                 >

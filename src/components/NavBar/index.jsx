@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import ProfilePic from "../../assets/images/MaskGroup2.jpg";
+import NotificationsNoneRoundedIcon from "@mui/icons-material/NotificationsNoneRounded";
 const pages = ["Menu 1", "Menu 2", "Menu 3"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -40,7 +41,7 @@ function NavBar() {
   //   };
 
   return (
-    <AppBar position="static" className="bg-[#232E3E]">
+    <AppBar position="fixed" className="bg-[#232E3E] w-full mb-8">
       <Container maxWidth="xl" className="justify-between">
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
@@ -133,6 +134,7 @@ function NavBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
+            <NotificationsNoneRoundedIcon className="mr-2" />
             <Tooltip title="Open settings">
               <IconButton
                 //   onClick={handleOpenUserMenu}
